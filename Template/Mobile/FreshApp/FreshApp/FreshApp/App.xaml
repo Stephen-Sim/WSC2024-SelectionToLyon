@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreshApp.App">
+    <Application.Resources>
+        <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+            <Setter Property="BarBackgroundColor" Value="#e51a2e"/>
+            <Setter Property="BackgroundColor" Value="#bbbbbb"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="OpenSans"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="OpenSans"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        
+        <Style TargetType="DatePicker">
+            <Setter Property="FontFamily" Value="OpenSans"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        
+        <Style TargetType="Picker">
+            <Setter Property="FontFamily" Value="OpenSans"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+    </Application.Resources>
+</Application>

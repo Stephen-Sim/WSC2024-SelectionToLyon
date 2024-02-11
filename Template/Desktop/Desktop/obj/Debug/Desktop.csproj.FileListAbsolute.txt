@@ -1,0 +1,10 @@
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.csproj.AssemblyReference.cache
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.cache
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.csproj.CoreCompileInputs.cache
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.Core.resources
