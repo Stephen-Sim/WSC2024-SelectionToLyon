@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="07155674b936444db562e66340371dfe" Name="Diagram1">
+        <EntityTypeShape EntityType="WSC2024Selection_Mobile_StephenModel.dimdate" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="WSC2024Selection_Mobile_StephenModel.item" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="WSC2024Selection_Mobile_StephenModel.user" Width="1.5" PointX="0.75" PointY="1.375" />
+        <AssociationConnector Association="WSC2024Selection_Mobile_StephenModel.FK_Items_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

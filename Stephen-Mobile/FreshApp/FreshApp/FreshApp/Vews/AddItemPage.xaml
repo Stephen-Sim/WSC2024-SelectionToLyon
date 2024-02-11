@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreshApp.Vews.AddItemPage">
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="titleLbl" Text="Add New Item" FontFamily="Gotham" FontSize="24"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Frame HeightRequest="140" WidthRequest="140" HorizontalOptions="CenterAndExpand" BorderColor="Black" BackgroundColor="Transparent">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Frame.GestureRecognizers>
+                <Image x:Name="itemImage"/>
+            </Frame>
+
+            <Grid RowDefinitions="55, 55, 55 ,55" ColumnDefinitions="2*, 4*">
+                <Label Text="Name:"/>
+                <Entry Placeholder="Enter the Item Name"  Grid.Column="1" x:Name="nameEntry"/>
+
+                <Label Grid.Row="1" Text="Address:"/>
+                <Entry Placeholder="Enter the Address" Grid.Row="1" Grid.Column="1" x:Name="addressEntry"/>
+
+                <Label Grid.Row="2" Text="Type:"/>
+                <Picker Title="Select an Item Type" Grid.Row="2" Grid.Column="1" x:Name="typePicker"/>
+
+                <Label Grid.Row="3" Text="Due Date:"/>
+                <DatePicker Grid.Row="3" Grid.Column="1" x:Name="datePicker"/>
+            </Grid>
+
+            <Frame HeightRequest="100" BorderColor="Black" BackgroundColor="Transparent">
+                <Image x:Name="CaptchaImage"/>
+            </Frame>
+
+            <Entry x:Name="captchaEntry" Keyboard="Numeric" Placeholder="Enter the Captcha"/>
+
+            <Button Text="Add Item" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

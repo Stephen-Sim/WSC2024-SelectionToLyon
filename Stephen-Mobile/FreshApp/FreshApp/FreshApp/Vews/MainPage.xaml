@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreshApp.Vews.MainPage">
+    
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label x:Name="titleLbl" Text="Login Page" FontFamily="Gotham" FontSize="24"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Grid VerticalOptions="CenterAndExpand" ColumnDefinitions="*, 3*" RowDefinitions="*, *, *">
+                <Label Text="Username:"/>
+                <Entry x:Name="usernameEntry" Grid.Column="1"/>
+
+                <Label Grid.Row="1" Text="Password:"/>
+                <Entry x:Name="pwdEntry" IsPassword="True" Grid.Row="1" Grid.Column="1"/>
+
+                <Button Text="Login" Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WSC2024Selection_Mobile_StephenModelStoreContainer" CdmEntityContainer="WSC2024Selection_Mobile_StephenEntities">
+    <EntitySetMapping Name="dimdates">
+      <EntityTypeMapping TypeName="WSC2024Selection_Mobile_StephenModel.dimdate">
+        <MappingFragment StoreEntitySet="dimdates">
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="WSC2024Selection_Mobile_StephenModel.item">
+        <MappingFragment StoreEntitySet="items">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="expiry_date" ColumnName="expiry_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="WSC2024Selection_Mobile_StephenModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

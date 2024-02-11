@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:models="clr-namespace:FreshApp.Models"
+             x:Class="FreshApp.Vews.ItemListPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="titleLbl" Text="Login Page" FontFamily="Gotham" FontSize="24"/>
+            <ImageButton Source="exit" Clicked="ImageButton_Clicked" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Picker x:Name="typePicker" Title="Filter by Item Type" SelectedIndexChanged="typePicker_SelectedIndexChanged"/>
+            <ListView x:Name="itemListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Item">
+                        <ViewCell>
+                            <Frame BorderColor="Black" HeightRequest="100" BackgroundColor="{Binding color}" Margin="5">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Frame.GestureRecognizers>
+                                <Grid RowDefinitions="80" ColumnDefinitions="80, *, 30">
+                                    <Frame HeightRequest="80" WidthRequest="80" CornerRadius="50">
+                                        <Image Source="{Binding imageSource}"/>
+                                    </Frame>
+                                    <StackLayout Grid.Column="1">
+                                        <Label Text="{Binding name}" FontSize="20"/>
+                                        <Label Text="{Binding expiry_date}"/>
+                                        <Label Text="{Binding address}"/>
+                                    </StackLayout>
+                                    <CheckBox Grid.Column="2" IsEnabled="False" IsChecked="{Binding status}"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="itemCountLabel"/>
+                <Button Text="+" HorizontalOptions="EndAndExpand" HeightRequest="55" WidthRequest="55" FontSize="26" FontAttributes="Bold" CornerRadius="50" Clicked="Button_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
