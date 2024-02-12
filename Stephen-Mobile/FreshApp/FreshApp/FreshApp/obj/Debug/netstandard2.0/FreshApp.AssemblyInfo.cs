@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FreshApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+699407c70fe48ddcf780a702e5788983ec3fc1a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("FreshApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FreshApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

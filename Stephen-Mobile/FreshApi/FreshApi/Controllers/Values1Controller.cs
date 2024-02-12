@@ -93,7 +93,10 @@ namespace FreshApi.Controllers
                 resString = await res.Content.ReadAsStringAsync();
                 var result1 = JsonConvert.DeserializeObject<List<string>>(resString);
 
-                result1.ForEach(x => x = CaesarCipher.Decrypt(x, key));
+                for (int i = 0; i < result1.Count; i++)
+                {
+                    result1[i] = CaesarCipher.Decrypt(result1[i], 2);
+                }
 
                 return Ok(result1);
             }
