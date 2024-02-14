@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WSC2024Selection_Desktop_StephenModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="location">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="routes" Relationship="Self.FK_routes_locations" FromRole="locations" ToRole="routes" />
+    <NavigationProperty Name="routes1" Relationship="Self.FK_routes_locations1" FromRole="locations" ToRole="routes" />
+  </EntityType>
+  <EntityType Name="route">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="location1Id" Type="Int64" Nullable="false" />
+    <Property Name="location2Id" Type="Int64" Nullable="false" />
+    <Property Name="cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="duration" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="location" Relationship="Self.FK_routes_locations" FromRole="routes" ToRole="locations" />
+    <NavigationProperty Name="location1" Relationship="Self.FK_routes_locations1" FromRole="routes" ToRole="locations" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_routes_locations">
+    <End Role="locations" Type="Self.location" Multiplicity="1" />
+    <End Role="routes" Type="Self.route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="locations">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="routes">
+        <PropertyRef Name="location1Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_routes_locations1">
+    <End Role="locations" Type="Self.location" Multiplicity="1" />
+    <End Role="routes" Type="Self.route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="locations">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="routes">
+        <PropertyRef Name="location2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WSC2024Selection_Desktop_StephenEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="locations" EntityType="Self.location" />
+    <EntitySet Name="routes" EntityType="Self.route" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_routes_locations" Association="Self.FK_routes_locations">
+      <End Role="locations" EntitySet="locations" />
+      <End Role="routes" EntitySet="routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_routes_locations1" Association="Self.FK_routes_locations1">
+      <End Role="locations" EntitySet="locations" />
+      <End Role="routes" EntitySet="routes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

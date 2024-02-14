@@ -1,0 +1,31 @@
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.csproj.AssemblyReference.cache
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.cache
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.csproj.CoreCompileInputs.cache
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Users\simsh\Desktop\Worldskills-Template\Desktop\Desktop\obj\Debug\Desktop.Core.resources
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\Desktop.exe
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\Desktop.pdb
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\EntityFramework.dll
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\EntityFramework.xml
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.csproj.AssemblyReference.cache
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.Core.resources
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.Form1.resources
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.UserControls.ItemControl.resources
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.csproj.GenerateResource.cache
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.csproj.CoreCompileInputs.cache
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.csproj.CopyComplete
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.exe
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.pdb
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\Newtonsoft.Json.dll
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\bin\Debug\Newtonsoft.Json.xml
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.UserControls.EdgeControl.resources
+C:\Users\simsh\Desktop\WS Selection Test Project Solutions\Stephen-Desktop\Desktop\obj\Debug\Desktop.UserControls.NodeControl.resources
