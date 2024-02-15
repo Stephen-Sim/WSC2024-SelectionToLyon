@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -91,6 +92,7 @@ namespace Desktop
         }
 
         public Item SelectedItem { get; set; } = null;
+        public Path BestPath { get; set; } = null;
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -100,6 +102,7 @@ namespace Desktop
         void loadSelectedItem()
         {
             flowLayoutPanel2.Controls.Clear();
+            BestPath = null;
 
             Graph g = new Graph(ent.routes.Count() * 2);
 
@@ -142,28 +145,28 @@ namespace Desktop
                 Paths.Add(path);
             }
 
-            Path bestPath = Paths.Where(x => (new DateTime(2024, 2, 27).AddDays(x.TotalDay)).Date <= SelectedItem.expiry_date.Date).OrderBy(x => x.TotalCost).FirstOrDefault();
+            BestPath = Paths.Where(x => (new DateTime(2024, 2, 27).AddDays(x.TotalDay)).Date <= SelectedItem.expiry_date.Date).OrderBy(x => x.TotalCost).FirstOrDefault();
 
             label2.Text = $"Name: {SelectedItem.name}";
             label3.Text = $"Type: {SelectedItem.type}";
             
-            if (bestPath != null)
+            if (BestPath != null)
             {
-                label4.Text = $"Estimated Cost: {bestPath.TotalCost.ToString("0.00")}";
-                label5.Text = $"Delivery Route: {new DateTime(2024, 2, 27).AddDays(bestPath.TotalDay).ToString("dd/MM/yyyy")}";
+                label4.Text = $"Estimated Cost: RM {BestPath.TotalCost.ToString("0.00")}";
+                label5.Text = $"Estimated Delivered Date: {new DateTime(2024, 2, 27).AddDays(BestPath.TotalDay).ToString("dd/MM/yyyy")}";
 
-                button1.Text = $"Send Complete Email";
+                button1.Text = $"Complete Delivery";
 
-                for (int i = 0; i < bestPath.PathTo.Count; i++)
+                for (int i = 0; i < BestPath.PathTo.Count; i++)
                 {
-                    var location = ent.locations.ToList().FirstOrDefault(x => x.id == bestPath.PathTo[i]);
+                    var location = ent.locations.ToList().FirstOrDefault(x => x.id == BestPath.PathTo[i]);
 
                     var node = new NodeControl();
                     node.Location = location.name;
 
                     flowLayoutPanel2.Controls.Add(node);
 
-                    if (i != bestPath.PathTo.Count - 1)
+                    if (i != BestPath.PathTo.Count - 1)
                     {
                         var edge = new EdgeControl();
 
@@ -175,10 +178,10 @@ namespace Desktop
             }
             else
             {
-                label4.Text = string.Empty;
+                label4.Text = "This item is not able to deliver within the date.";
                 label5.Text = string.Empty;
 
-                button1.Text = $"Send Suspend Email";
+                button1.Text = $"Suspend Delivery";
 
                 this.panel2.Visible = false;
             }
@@ -188,13 +191,56 @@ namespace Desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Complete Delivery")
+            var dialogResult = MessageBox.Show("Are you sure to update the status?", "", MessageBoxButtons.YesNo);
+            
+            if (dialogResult == DialogResult.Yes)
             {
+                var smtp = new SmtpClient()
+                {
+                    Port = 25,
+                    Host = "localhost"
+                };
 
-            }
-            else if (button1.Text == "Suspend Email")
-            {
+                MailMessage message= new MailMessage()
+                {
+                    From = new MailAddress("admin@logis.my"),
+                    To =
+                    {
+                        SelectedItem.email
+                    },
+                    IsBodyHtml = true, 
+                };
 
+                if (button1.Text == "Complete Delivery")
+                {
+                    message.Subject = "Complete Delivery";
+
+                    message.Body = $"<p>Dear {SelectedItem.receiver_name},</p><br>" +
+                        $"<p>We are pleased to inform you that the item, <strong>{SelectedItem.name} </strong>" +
+                        $"was successfully delivered on {new DateTime(2024, 2, 27).AddDays(BestPath.TotalDay).ToString("dd/MM/yyyy")}." +
+                        $"The total cost of the delivery amounted to RM {BestPath.TotalCost.ToString("0.00")}.</p>" +
+                        $"<br><p>Thank you for your business with us.</p>";
+                }
+                else if (button1.Text == "Suspend Delivery")
+                {
+                    message.Subject = "Suspend Delivery";
+
+                    message.Body = $"<p>Dear {SelectedItem.receiver_name},</p><br>" +
+                        $"<p>We regret to inform you that we are unable to deliver the item, <strong>{SelectedItem.name}</strong>" +
+                        $", within the expected timeframe. We sincerely apologize for any inconvenience this may cause.</p>" +
+                        $"<br><p>Thank you for your understanding.</p>";
+                }
+
+                smtp.Send(message);
+
+                var temp = Items;
+                var item = temp.FirstOrDefault(x => x.id == SelectedItem.id);
+                item.status = true;
+
+                MessageBox.Show("Item Status is udpated. An email is sent to the reciever.");
+
+                this.panel1.Visible = false;
+                loadData();
             }
         }
     }
