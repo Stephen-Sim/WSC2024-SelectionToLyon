@@ -148,7 +148,7 @@ namespace Desktop
             BestPath = Paths.Where(x => (new DateTime(2024, 2, 27).AddDays(x.TotalDay)).Date <= SelectedItem.expiry_date.Date).OrderBy(x => x.TotalCost).FirstOrDefault();
 
             label2.Text = $"Name: {SelectedItem.name}";
-            label3.Text = $"Type: {SelectedItem.type}";
+            label3.Text = $"Type: {SelectedItem.type.Replace("&", "&&")}";
             
             if (BestPath != null)
             {
