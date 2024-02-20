@@ -41,7 +41,7 @@ namespace FreshApi.Tests
                 }
             }
 
-            Console.WriteLine($"Login as User: yung huey, Caesar Cipher Key Value: {key}");
+            Console.WriteLine($"Key Value: {key}");
             Console.WriteLine($"Matched: {matched}");
             Console.WriteLine($"Unmatched: {unmateched}");
         }
